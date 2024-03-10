@@ -35,7 +35,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  res.render("auth/login");
+  res.render("auth/register");
 });
 
 app.use('/users',require('./src/routes/UserRoute'))

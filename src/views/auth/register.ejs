@@ -44,7 +44,7 @@
   <div class="container">
     <div class="registration-form">
       <h2 class="form-title">User Registration</h2>
-      <form action="/register" method="POST">
+      <form action="users/create" method="POST">
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" name="username" required>
@@ -72,3 +72,21 @@
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+<!-- on key up confirm password -->
+<script>
+  const password = document.getElementById('password');
+  const confirm_password = document.getElementById('confirm_password');
+
+  function validatePassword(){
+    if(password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Don't Match");
+    } else {
+      confirm_password.setCustomValidity('');
+    }
+  }
+
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
+</script>
