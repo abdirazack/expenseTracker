@@ -1,15 +1,20 @@
-const http = require('http');
+const express = require("express");
 
-require('dotenv').config(); // Load environment variables from .env file
+const dotenv = require("dotenv");
+const ejs = require("ejs");
 
+dotenv.config();
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello, world!');
+const app = express();
+
+app.set("view engine", "ejs");
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
 });
 
-const port = process.env.PORT || 3000; // Use the port from the environment file or fallback to 3000
-server.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+app.get("/", (req, res) => {
+  res.render("home");
 });
