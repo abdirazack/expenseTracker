@@ -14,6 +14,6 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
   res.render("home");
 });
