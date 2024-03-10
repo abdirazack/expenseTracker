@@ -15,9 +15,9 @@ const app = express();
 
 connectToDatabase();
 
-app.set("views", path.join(__dirname, "src", "views"));
-
 app.set("view engine", "ejs");
+
+app.set("views", path.join(__dirname, "src", "views"));
 
 const publicPath = path.join(__dirname, "public");
 
