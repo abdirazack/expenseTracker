@@ -19,6 +19,9 @@ app.set("view engine", "ejs");
 
 app.set("views", path.join(__dirname, "src", "views"));
 
+app.use(express.json())
+
+
 const publicPath = path.join(__dirname, "public");
 
 app.use(express.static(publicPath));
@@ -32,3 +35,5 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.render("auth/login");
 });
+
+app.use('/users',require('./src/routes/UserRoute'))
