@@ -23,7 +23,6 @@ app.use(express.json())
 
 // Middleware to parse URL-encoded form data
 app.use(express.urlencoded({ extended: true }));
-
 const publicPath = path.join(__dirname, "public");
 
 app.use(express.static(publicPath));
@@ -35,7 +34,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  res.render("auth/register");
+  res.render("auth/login");
 });
 
 app.use('/users',require('./src/routes/UserRoute'))
