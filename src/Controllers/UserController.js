@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const path=  require('path')
 const getUser = async (req, res) => {
   const userid= req.user
   if(!userid){
@@ -38,20 +39,24 @@ const createUser = async (req, res) => {
       password: hashedPassword
     });
 
-    const userId=newUser._id;
-    // Generate and check if token is successfully generated
-    const token = await generateToken(userId)
+    const userId = newUser._id;
+
+    // Generate token
+    const token = await generateToken(userId);
     if (token.length < 1) {
       return res.status(400).json({ error: "Failed to generate token" });
     }
+    const redirectUrl = path.join('/', '/') + `?token=${token}`;
+    // Redirect to login page with token as query parameter
+    res.redirect(redirectUrl);
 
-    // Send success response with token
-    res.status(201).json({ message: "New User Created successfully", token });
+    
   } catch (error) {
     console.error("Error creating user:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
 
 const updateUser = (req, res) => {
   res.status(200).json({ message: `Updated  User ${req.params.id}` });
