@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registration</title>
+  <title>User Login</title>
   <!-- Link to Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <style>
@@ -14,13 +14,13 @@
       justify-content: center;
       align-items: center;
       height: 100vh; /* Make the body height 100% of viewport height */
-      
+      width: 100%;
     }
     .container {
       width: 100%;
       max-width: 400px;
     }
-    .registration-form {
+    .login-form {
       max-width: 400px;
       background-color: #fff; /* White background */
       padding: 20px;
@@ -34,7 +34,7 @@
     .form-control {
       margin-bottom: 20px;
     }
-    .btn-register {
+    .btn-login {
       width: 100%;
     }
   </style>
@@ -42,13 +42,9 @@
 <body>
 
   <div class="container">
-    <div class="registration-form">
-      <h2 class="form-title">User Registration</h2>
-      <form action="/register" method="POST">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" required>
-        </div>
+    <div class="login-form">
+      <h2 class="form-title">User Login</h2>
+      <form action="/login" method="POST">
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" class="form-control" id="email" name="email" required>
@@ -57,13 +53,9 @@
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" name="password" required>
         </div>
-        <div class="form-group">
-          <label for="confirm_password">Confirm Password</label>
-          <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
-        </div>
-        <button type="submit" class="btn btn-primary btn-register">Register</button>
+        <button type="submit" class="btn btn-primary btn-login">Login</button>
       </form>
-      <p class="mt-3 text-center">Already have an account? <a href="/login">Login</a></p>
+      <p class="mt-3 text-center">Don't have an account? <a href="/register">Register</a></p>
     </div>
   </div>
 

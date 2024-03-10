@@ -30,5 +30,5 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  res.render("auth/register");
+  res.render("auth/login");
 });
