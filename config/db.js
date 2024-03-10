@@ -1,26 +1,24 @@
-const { MongoClient } = require('mongodb');
-
-// Connection URI
-const uri = "mongodb+srv://expense:Expense123456@cluster0.7wtmfao.mongodb.net/?retryWrites=true&w=majority";
-
-// Create a new MongoClient
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+const mongoose = require('mongoose');
+const { MONGODB_URI } = process.env;
 
 async function connectToDatabase() {
   try {
-    // Connect to the MongoDB cluster
-    await client.connect();
+    // Connect to the MongoDB database using Mongoose
+    await mongoose.connect(MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     console.log('Connected to MongoDB Atlas');
 
-    // Return the client object to be used for database operations
-    return client;
+    // Return the Mongoose connection object
+    return mongoose.connection;
   } catch (error) {
     console.error('Error connecting to MongoDB Atlas:', error);
     throw error;
   }
 }
+
+console.log('MongoDB URI:', process.env.MONGODB_URI);
+
 
 module.exports = connectToDatabase;

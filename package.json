@@ -4,7 +4,7 @@
   "description": "This app helps you track all your expenses.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -29,3 +29,4 @@
     "nodemon": "^3.1.0"
   }
 }
+
