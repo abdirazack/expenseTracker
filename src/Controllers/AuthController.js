@@ -64,7 +64,8 @@ const loginHandler = async (req, res) => {
       return res.render("login", { error: "Failed to generate token" });
     }
 
-   res.render("home", { token });
+   res.render("login", { token });
+
   } catch (error) {
     console.error("Error in login:", error);
     res.render("login", { error: "Internal server error" });
