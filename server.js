@@ -23,6 +23,7 @@ app.use(express.json())
 
 // Middleware to parse URL-encoded form data
 app.use(express.urlencoded({ extended: true }));
+
 const publicPath = path.join(__dirname, "public");
 
 app.use(express.static(publicPath));
