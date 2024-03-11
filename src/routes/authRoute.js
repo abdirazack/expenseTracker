@@ -1,6 +1,8 @@
 const express = require("express");
 route = express.Router();
 
+const auth = require('../../middleware/Auth')
+
 const {
   home,
   loginHandler,
@@ -11,7 +13,7 @@ const {
 
 route.get("/", loginPage);
 
-route.get("/home", home);
+route.get("/home", auth,home);
 
 route.get("/register", registerPage);
 
