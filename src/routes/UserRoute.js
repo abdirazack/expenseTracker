@@ -1,6 +1,6 @@
 const express = require("express");
 
-const auth = require('../../middleware/Auth')
+const auth = require("../../middleware/Auth");
 const {
   getUser,
   createUser,
@@ -11,7 +11,7 @@ const {
 route = express.Router();
 
 //get me
-route.get("/show",  auth, getUser);
+route.get("/show", auth, getUser);
 
 //create new user
 route.post("/create", createUser);

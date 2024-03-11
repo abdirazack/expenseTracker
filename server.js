@@ -2,10 +2,9 @@ const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
 
-
 const path = require("path");
 
-const connectToDatabase = require('./config/db')
+const connectToDatabase = require("./config/db");
 
 const ejs = require("ejs");
 
@@ -19,7 +18,7 @@ app.set("view engine", "ejs");
 
 app.set("views", path.join(__dirname, "src", "views"));
 
-app.use(express.json())
+app.use(express.json());
 
 // Middleware to parse URL-encoded form data
 app.use(express.urlencoded({ extended: true }));
@@ -34,8 +33,6 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
 
+app.use("/", require("./src/routes/authRoute"));
 
-app.use('/',require('./src/routes/authRoute'))
-
-app.use('/',require('./src/routes/UserRoute'))
-
+app.use("/", require("./src/routes/UserRoute"));
