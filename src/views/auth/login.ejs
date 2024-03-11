@@ -43,9 +43,14 @@
 </head>
 <body>
   <div class="container">
+    <% if (error) { %>
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+    <% } %>
     <div class="login-form">
       <h2 class="form-title">User Login</h2>
-      <form action="/login" method="POST">
+      <form action="/loginHandler" method="POST">
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" class="form-control" id="email" name="email" required>

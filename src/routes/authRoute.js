@@ -13,10 +13,10 @@ const {
 
 route.get("/", loginPage);
 
-route.get("/home", auth,home);
+route.get("/home", home);
 
 route.get("/register", registerPage);
 
-route.post("login/verify", loginHandler);
+route.post("/loginHandler", loginHandler);
 
 module.exports = route;

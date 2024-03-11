@@ -33,7 +33,7 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
 
-
+app.use("/", require("./src/routes/UserRoute"));
 app.use("/", require("./src/routes/authRoute"));
 
 app.use("/", require("./src/routes/UserRoute"));
