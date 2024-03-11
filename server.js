@@ -1,5 +1,4 @@
 const express = require("express");
-
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -34,15 +33,11 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
 
-<<<<<<< HEAD
+
 app.use("/", require("./src/routes/authRoute"));
 
 app.use("/", require("./src/routes/UserRoute"));
 
 app.use((req, res) => {
  res.render('404')
-=======
-app.get("/", (req, res) => {
-  res.render("home");
->>>>>>> 026ef01 (made change to serverjs)
-});
+})
