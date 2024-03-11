@@ -62,12 +62,8 @@ const loginHandler = async (req, res) => {
       return res.render("auth/login", { error: "Failed to generate token" });
     }
 
-<<<<<<< HEAD
-   res.render("login", { token });
-=======
     // Redirect user to home page with token as query parameter
     res.redirect(`/home?token=${token}`);
->>>>>>> main
 
   } catch (error) {
     console.error("Error in login:", error);
