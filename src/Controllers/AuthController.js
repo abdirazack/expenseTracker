@@ -11,6 +11,11 @@ const registerPage = (req, res) => {
   res.render("auth/register");
 };
 
+const home = (req, res) => {
+  res.render("home");
+};
+
+
 const generateToken = (userId) => {
   const payload = { userId };
   const secretKey = process.env.JWT_SECRET;
@@ -67,6 +72,7 @@ const loginHandler = async (req, res) => {
 };
 
 module.exports = {
+  home,
   loginPage,
   registerPage,
   loginHandler,
