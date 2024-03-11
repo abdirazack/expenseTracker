@@ -2,7 +2,6 @@ const express = require("express");
 route = express.Router();
 const auth = require('../../middleware/Auth')
 
-const auth = require('../../middleware/Auth')
 
 const {
   home,
@@ -14,7 +13,7 @@ const {
 
 route.get("/", loginPage);
 
-route.get("/home", auth,home);
+route.get("/home", home);
 
 route.get("/register", registerPage);
 
