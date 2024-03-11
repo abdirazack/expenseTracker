@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <!-- Link to Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    /* Custom CSS styles */
+    .hero-banner {
+      background-color: #007bff; /* Blue background */
+      padding: 100px 0;
+      text-align: center;
+      color: #fff; /* White text color */
+      animation: fadeInUp 1s ease-in-out; /* Fade-in animation */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow */
+    }
+    .feature {
+      background-color: #f8f9fa; /* Light gray background */
+      padding: 50px 0;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow */
+    }
+    .testimonial {
+      background-color: #ffffff; /* White background */
+      padding: 50px 0;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow */
+    }
+    .cta {
+      background-color: #28a745; /* Green background */
+      padding: 100px 0;
+      text-align: center;
+      color: #fff; /* White text color */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow */
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="container">
+      <h1>Welcome to Expense Tracker</h1>
+      <p>A simple and powerful tool to track your expenses</p>
+      <a href="#features" class="btn btn-primary btn-lg">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="feature">
+    <div class="container">
+      <h2>Key Features</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Expense Tracking</h3>
+          <p>Effortlessly track your expenses and manage your budget</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Income Management</h3>
+          <p>Keep track of your income sources and monitor your financial health</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Custom Categories</h3>
+          <p>Create custom expense categories to organize your spending</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonial">
+    <div class="container">
+      <h2>What Our Users Say</h2>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card rounded shadow">
+            <div class="card-body">
+              <p>"Expense Tracker has helped me gain control over my finances. Highly recommended!"</p>
+              <p class="text-muted">- John Doe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action -->
+  <section class="cta">
+    <div class="container">
+      <h2>Start Managing Your Finances Today</h2>
+      <a href="#" class="btn btn-primary btn-lg">Sign Up Now</a>
+    </div>
+  </section>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

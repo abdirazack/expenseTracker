@@ -1,0 +1,20 @@
+<%- include('layouts/header') %>
+    <%- include('layouts/nav') %>
+
+        <!-- Your home content goes here -->
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-end mb-3">
+                        <button type="button" class="btn btn-dark me-5" data-bs-toggle="modal"
+                            data-bs-target="#expenseModal">
+                            <span class="glyphicon glyphicon-plus"></span> Add Expense
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <%- include('expense') %>
+        </div>
+
+        <%- include('layouts/footer') %>
