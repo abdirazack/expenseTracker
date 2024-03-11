@@ -1,0 +1,83 @@
+<!-- Expense modal -->
+<div class="modal fade" id="expenseModal" tabindex="-1" data-bs-backdrop="static"
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Expense</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form>
+                <div class="mb-3">
+                    <label for="expenseAmount" class="form-label">Amount</label>
+                    <input type="text" class="form-control" id="expenseAmount" />
+                </div>
+                <div class="mb-3">
+                    <label for="expenseCategory" class="form-label">Category</label>
+                    <select class="form-select select2" id="expenseCategory">
+                        <option>Select category...</option>
+                        <option value="food">Food</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="utilities">Utilities</option>
+
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="paymentMethod" class="form-label">Payment Method</label>
+                    <input type="text" class="form-control" id="paymentMethod" />
+                </div>
+                <div class="mb-3">
+                    <label for="currency" class="form-label">Currency</label>
+                    <input type="text" class="form-control" id="currency" />
+                </div>
+                <div class="mb-3">
+                    <label for="expenseDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="expenseDescription" rows="3"></textarea>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+            </button>
+            <button type="button" class="btn btn-primary">Save Expense</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    $(document).ready(function() {
+    $('#expenseModal').on('show.bs.modal', function() {
+        // Fetch distinct categories and populate the dropdown
+        $.get('/categories', function(categories) {
+            const categorySelect = $('#expenseCategory');
+            categorySelect.empty().append('<option>Select category...</option>');
+            categories.forEach(category => {
+                categorySelect.append(`<option value="${category}">${category}</option>`);
+            });
+        });
+
+        // Fetch distinct payment methods and populate the dropdown
+        $.get('/payment-methods', function(paymentMethods) {
+            const paymentMethodSelect = $('#paymentMethod');
+            paymentMethodSelect.empty().append('<option>Select payment method...</option>');
+            paymentMethods.forEach(paymentMethod => {
+                paymentMethodSelect.append(`<option value="${paymentMethod}">${paymentMethod}</option>`);
+            });
+        });
+
+        // Fetch distinct currencies and populate the dropdown
+        $.get('/currencies', function(currencies) {
+            const currencySelect = $('#currency');
+            currencySelect.empty().append('<option>Select currency...</option>');
+            currencies.forEach(currency => {
+                currencySelect.append(`<option value="${currency}">${currency}</option>`);
+            });
+        });
+    });
+});
+</script>
