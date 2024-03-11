@@ -33,15 +33,17 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
 
-<<<<<<< HEAD
 
-=======
 app.use("/", require("./src/routes/UserRoute"));
->>>>>>> main
+
 app.use("/", require("./src/routes/authRoute"));
 
 app.use("/", require("./src/routes/UserRoute"));
 
+
+app.use("/", require("./src/routes/chartsRoute"));
+
 app.use((req, res) => {
  res.render('404')
-})
+});
+
