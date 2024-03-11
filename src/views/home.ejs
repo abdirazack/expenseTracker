@@ -5,7 +5,10 @@
 
         <div class="container mt-5">
             <div class="row justify-content-center">
-                <div class="col-md-6">
+                <div class="col-md-8">
+                    <%- include('chart') %>
+                </div>
+                <div class="col-md-4">
                     <div class="text-end mb-3">
                         <button type="button" class="btn btn-dark me-5" data-bs-toggle="modal"
                             data-bs-target="#expenseModal">
@@ -13,9 +16,6 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <%- include('chart') %>
-                    </div>  
             </div>
             <%- include('expense') %>
         </div>
