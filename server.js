@@ -38,6 +38,10 @@ app.use("/", require("./src/routes/authRoute"));
 
 app.use("/", require("./src/routes/UserRoute"));
 
+
+app.use("/", require("./src/routes/chartsRoute"));
+
 app.use((req, res) => {
  res.render('404')
 });
+

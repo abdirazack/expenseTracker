@@ -1,0 +1,31 @@
+<canvas id="spendingChart" width="400" height="200"></canvas>
+
+< <script>
+    // Function to fetch spending data and create the spending chart
+    function createSpendingChart() {
+        // Fetch spending data
+        fetch('/api/charts') // Change the URL to match your server route
+            .then(response => response.json())
+            .then(spendingData => {
+                // Create the spending chart
+                const ctx = document.getElementById('spendingChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: spendingData,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching spending data:', error);
+            });
+    }
+
+    // Call the function to create the spending chart
+    createSpendingChart();
+</script>
